@@ -1,4 +1,4 @@
-ColourSharp
-===========
+Audio-Visuliser
+===============
 
-ColourSharp is something
+C# Visuliser
