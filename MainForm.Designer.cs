@@ -1,6 +1,6 @@
 ﻿namespace Aero_Visualizer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,40 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.OpenAudio = new System.Windows.Forms.OpenFileDialog();
             this.FFTThink = new System.Windows.Forms.Timer(this.components);
             this.tabs = new System.Windows.Forms.TabControl();
             this.ColorTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.SFMLPanel = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.colorOutput = new System.Windows.Forms.Panel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.SFMLPanel = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.DeviceTab = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Check_MintoTray = new System.Windows.Forms.CheckBox();
             this.DeviceList = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.TrayContext = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TrayContextEnable = new System.Windows.Forms.ToolStripMenuItem();
             this.TrayContextRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.TrayContextClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.SP = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tabs.SuspendLayout();
             this.ColorTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.DeviceTab.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.TrayContext.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +63,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.DeviceTab.SuspendLayout();
+            this.TrayContext.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenAudio
@@ -86,7 +82,6 @@
             // 
             this.tabs.Controls.Add(this.ColorTab);
             this.tabs.Controls.Add(this.DeviceTab);
-            this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabs.Location = new System.Drawing.Point(0, 0);
             this.tabs.Name = "tabs";
@@ -105,14 +100,60 @@
             this.ColorTab.TabIndex = 1;
             this.ColorTab.Text = "Color Settings";
             // 
-            // label1
+            // splitContainer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Sensitivity:";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.colorOutput);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(962, 496);
+            this.splitContainer1.SplitterDistance = 53;
+            this.splitContainer1.TabIndex = 10;
+            // 
+            // colorOutput
+            // 
+            this.colorOutput.BackColor = System.Drawing.Color.Red;
+            this.colorOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.colorOutput.Location = new System.Drawing.Point(0, 0);
+            this.colorOutput.Name = "colorOutput";
+            this.colorOutput.Size = new System.Drawing.Size(962, 53);
+            this.colorOutput.TabIndex = 0;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.SFMLPanel);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.trackBar1);
+            this.splitContainer2.Panel2.Controls.Add(this.label1);
+            this.splitContainer2.Size = new System.Drawing.Size(962, 439);
+            this.splitContainer2.SplitterDistance = 337;
+            this.splitContainer2.TabIndex = 11;
+            // 
+            // SFMLPanel
+            // 
+            this.SFMLPanel.AutoSize = true;
+            this.SFMLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SFMLPanel.Location = new System.Drawing.Point(0, 0);
+            this.SFMLPanel.Name = "SFMLPanel";
+            this.SFMLPanel.Size = new System.Drawing.Size(962, 337);
+            this.SFMLPanel.TabIndex = 7;
             // 
             // trackBar1
             // 
@@ -124,23 +165,14 @@
             this.trackBar1.TabIndex = 8;
             this.trackBar1.Value = 1;
             // 
-            // SFMLPanel
+            // label1
             // 
-            this.SFMLPanel.AutoSize = true;
-            this.SFMLPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SFMLPanel.Location = new System.Drawing.Point(0, 0);
-            this.SFMLPanel.Name = "SFMLPanel";
-            this.SFMLPanel.Size = new System.Drawing.Size(962, 337);
-            this.SFMLPanel.TabIndex = 7;
-            // 
-            // colorOutput
-            // 
-            this.colorOutput.BackColor = System.Drawing.Color.Red;
-            this.colorOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorOutput.Location = new System.Drawing.Point(0, 0);
-            this.colorOutput.Name = "colorOutput";
-            this.colorOutput.Size = new System.Drawing.Size(962, 53);
-            this.colorOutput.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Sensitivity:";
             // 
             // DeviceTab
             // 
@@ -203,36 +235,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Device to use for Aero Visaulizer";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(968, 502);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // TrayIcon
             // 
             this.TrayIcon.ContextMenuStrip = this.TrayContext;
@@ -280,63 +282,19 @@
             this.panel1.Size = new System.Drawing.Size(976, 528);
             this.panel1.TabIndex = 5;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.colorOutput);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(962, 496);
-            this.splitContainer1.SplitterDistance = 53;
-            this.splitContainer1.TabIndex = 10;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.SFMLPanel);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.trackBar1);
-            this.splitContainer2.Panel2.Controls.Add(this.label1);
-            this.splitContainer2.Size = new System.Drawing.Size(962, 439);
-            this.splitContainer2.SplitterDistance = 337;
-            this.splitContainer2.TabIndex = 11;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 528);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Aero Visualizer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.tabs.ResumeLayout(false);
             this.ColorTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.DeviceTab.ResumeLayout(false);
-            this.DeviceTab.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.TrayContext.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -347,6 +305,11 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.DeviceTab.ResumeLayout(false);
+            this.DeviceTab.PerformLayout();
+            this.TrayContext.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -366,16 +329,13 @@
         private System.Windows.Forms.ToolStripMenuItem TrayContextRestore;
         private System.Windows.Forms.ToolStripMenuItem TrayContextClose;
         private System.Windows.Forms.CheckBox Check_MintoTray;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort SP;
         private System.Windows.Forms.Panel SFMLPanel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel colorOutput;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;

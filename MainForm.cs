@@ -16,7 +16,7 @@ using Image = System.Drawing.Image;
 
 namespace Aero_Visualizer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public static dynamic json = JsonConvert.DeserializeObject(File.ReadAllText("config.json"));
 
@@ -34,10 +34,10 @@ namespace Aero_Visualizer
         private Boolean comError;
         private int stream = -1; //The streamID for BASS
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            serialPort1.Close();
+            SP.Close();
             watcher.Path = Directory.GetCurrentDirectory();
             watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
                                    | NotifyFilters.FileName | NotifyFilters.DirectoryName;
@@ -71,13 +71,13 @@ namespace Aero_Visualizer
                     Check_MintoTray.Checked = true;
                 }
 
-                serialPort1.PortName = ini.IniReadValue("GeneralSettings", "COM");
+                SP.PortName = ini.IniReadValue("GeneralSettings", "COM");
             }
             catch (Exception)
             {
                 try
                 {
-                    serialPort1.PortName = ini.IniReadValue("GeneralSettings", "COM");
+                    SP.PortName = ini.IniReadValue("GeneralSettings", "COM");
                 }
                 catch
                 {
@@ -89,10 +89,10 @@ namespace Aero_Visualizer
 
             //serialPort1.PortName = "COM3"
 
-            serialPort1.BaudRate = 9600;
+            SP.BaudRate = 9600;
             try
             {
-                serialPort1.Open();
+                SP.Open();
             }
 
             catch
@@ -305,7 +305,7 @@ namespace Aero_Visualizer
 
             try
             {
-                serialPort1.Write(new[] {Convert.ToByte(BR), Convert.ToByte(SG), Convert.ToByte(TB)}, 0, 3);
+                SP.Write(new[] {Convert.ToByte(BR), Convert.ToByte(SG), Convert.ToByte(TB)}, 0, 3);
             }
             catch
             {
