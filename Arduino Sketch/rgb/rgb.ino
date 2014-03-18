@@ -2,7 +2,7 @@ int part = 0;
 byte numbertrans = 0;
 
 void setup() {
-  Serial.begin(9600); 
+  Serial.begin(115200); 
 }
 
 void loop() {

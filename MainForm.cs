@@ -89,7 +89,7 @@ namespace Aero_Visualizer
 
             //serialPort1.PortName = "COM3"
 
-            SP.BaudRate = 9600;
+            SP.BaudRate = 115200;
             try
             {
                 SP.Open();
