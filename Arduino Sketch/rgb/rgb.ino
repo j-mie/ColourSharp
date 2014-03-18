@@ -6,7 +6,7 @@ int part = 0;
 byte numbertrans = 0;
 
 void setup() {
-  Serial.begin(9600); 
+  Serial.begin(115200); 
 }
 
 void loop() {
@@ -19,9 +19,8 @@ void loop() {
       datag = numbertrans;
     if (part == 2)
       datab = numbertrans;
-
     part++;
-  //Serial.println(numbertrans);     
+
     if (part == 3) {       
       analogWrite(9, datar); // Pin 9 Needs to be the Red LED
       analogWrite(10, datag); // Pin 10 Needs to be the Green LED
