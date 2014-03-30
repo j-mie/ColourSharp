@@ -178,5 +178,9 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN
 *.psess
+<<<<<<< HEAD:.gitignore
 *.suo
+=======
+Aero Visualizer.v12.suo
+>>>>>>> jamiebranch:ColourSharp/.gitignore
 *.vspx
