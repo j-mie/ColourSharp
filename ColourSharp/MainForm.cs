@@ -322,7 +322,12 @@ namespace Aero_Visualizer
 
             try
             {
-                SP.Write(new[] {Convert.ToByte(BR), Convert.ToByte(SG), Convert.ToByte(TB)}, 0, 3);
+                SP.Write("R");
+                SP.Write(new[] { (byte)BR}, 0, 1);
+                SP.Write("G");
+                SP.Write(new[] { (byte)SG}, 0, 1);
+                SP.Write("B");
+                SP.Write(new[] { (byte)TB}, 0, 1);
             }
             catch
             {
