@@ -8,7 +8,7 @@ void setup() {
 void loop() {
   if (Serial.available() > 0) { 
     numbertrans = Serial.read();
-
+    Serial.write(numbertrans);
     if (part == 0)
       analogWrite(9, numbertrans); // Pin 9 Needs to be the Red LED
     if (part == 1)

@@ -27,6 +27,10 @@ namespace Aero_Visualizer
         private WinAPI.DWM_COLORIZATION_PARAMS Backup; //Var for storing their current color scheme
         private int Device; //Device to play from
 
+        private Text text_Red = new Text("RGB", new Font("OxygenMono-Regular.ttf"));
+        private Text text_Green = new Text("RGB", new Font("OxygenMono-Regular.ttf"));
+        private Text text_Blue = new Text("RGB", new Font("OxygenMono-Regular.ttf"));
+
         //Create the WASAPI vars 
         private BassWasapiHandler _wasapi; //Speedy thing goes in
         private BassWasapiHandler _wasapiOutput; //Speedy thing comes out
@@ -36,6 +40,7 @@ namespace Aero_Visualizer
 
         public MainForm()
         {
+            
             InitializeComponent();
             SP.Close();
             watcher.Path = Directory.GetCurrentDirectory();
@@ -290,6 +295,14 @@ namespace Aero_Visualizer
             window.Clear();
 
             VertexArray[] vertexArrays = VertexArrayGenerator(fft);
+
+            text_Red.Position = new Vector2f(40, 40);
+            text_Blue.Position = new Vector2f(40, 120);
+            text_Green.Position = new Vector2f(40, 200);
+
+            window.Draw(text_Red);
+            window.Draw(text_Green);
+            window.Draw(text_Blue);
             window.Draw(vertexArrays[0]);
             window.Draw(vertexArrays[1]);
             window.Display();
@@ -299,6 +312,10 @@ namespace Aero_Visualizer
             Color.HsvToRgb((int) json.config.bass.hue, 1, bassaverage, out BR, out BG, out BB); //R
             Color.HsvToRgb((int) json.config.snare.hue, 1, snareaverage, out SR, out SG, out SB); //G
             Color.HsvToRgb((int) json.config.talk.hue, 1, talkaverage, out TR, out TG, out TB); //B
+            
+            text_Red.DisplayedString = String.Format("Red: {0}", BR);
+            text_Green.DisplayedString = String.Format("Green: {0}", SG);
+            text_Blue.DisplayedString = String.Format("Blue: {0}", TB);
 
             colorOutput.BackColor = System.Drawing.Color.FromArgb(255, BR, SG, TB);
             Dwm.SetDwmColor(System.Drawing.Color.FromArgb(255, BR, SG, TB));

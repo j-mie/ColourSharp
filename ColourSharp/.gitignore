@@ -177,3 +177,6 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN
+*.psess
+Aero Visualizer.v12.suo
+*.vspx
