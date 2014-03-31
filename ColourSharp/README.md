@@ -1,4 +1,0 @@
-Audio-Visuliser
-===============
-
-C# Visuliser
