@@ -3,22 +3,22 @@
     "config": {
         "bass": {
             "start": "1",
-            "end": "20",
-            "hue": "0",
+            "end": "10",
+            "hue": "1",
             "colour": "r"
         },
 
         "snare": {
-            "start": "20",
-            "end": "60",
-            "hue": "120",
+            "start": "200",
+            "end": "300",
+            "hue": "150",
             "colour": "g"
 
         },
 
         "talk": {
-            "start": "60",
-            "end": "1900",
+            "start": "1200",
+            "end": "1500",
             "hue": "240",
             "colour": "b"
 
