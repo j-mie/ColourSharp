@@ -1,1 +1,9 @@
 C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\bin\Debug\ColourSharpDebug.exe.config
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.csprojResolveAssemblyReference.cache
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.ControlForm.resources
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.Properties.Resources.resources
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.csproj.GenerateResource.Cache
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\bin\Debug\ColourSharpDebug.exe
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\bin\Debug\ColourSharpDebug.pdb
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.exe
+C:\Users\Jamie\Documents\ColourSharp\ColourSharpDebug\obj\Debug\ColourSharpDebug.pdb
