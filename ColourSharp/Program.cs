@@ -20,10 +20,6 @@ namespace Aero_Visualizer
             {
                 Console.WriteLine("Starting up in 64Bit");
             }
-            else
-            {
-                Console.WriteLine("Starting up in {0}Bit", IntPtr.Size * 8);
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
