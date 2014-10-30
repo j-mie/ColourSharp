@@ -1,4 +1,4 @@
-ColourSharp
+ColourSharp [![Build status](https://ci.appveyor.com/api/projects/status/ednjwgm10nm4u2oy?svg=true)](https://ci.appveyor.com/project/JamieH/coloursharp)
 ===========
 
 ColourSharp started off as a simple VB.Net program to send a value through a serial port to a Arduino board to turn a LED on and off. I used my friends Aero Visualizer project which changed the Aero colour and made it more advanced and added dynamic colours based on the incoming FFT stream. A video can be found here: 
